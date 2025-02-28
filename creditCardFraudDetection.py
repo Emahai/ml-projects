@@ -1,9 +1,21 @@
+import kagglehub
+organizations_mlg_ulb_creditcardfraud_path = kagglehub.dataset_download('mlg-ulb/creditcardfraud')
+
+print('Data source import complete.')
+
+import os
+
+# Find the correct folder where kagglehub stored the dataset
+print(organizations_mlg_ulb_creditcardfraud_path)
+print(os.listdir(organizations_mlg_ulb_creditcardfraud_path)[0])
+
 # Imported Libraries
 import numpy as np 
 import pandas as pd 
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.decomposition import PCA, TruncatedSVD
+from sklearn.manifold import TSNE
 import matplotlib.patches as mpatches
 import time
 
@@ -30,7 +42,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-df = pd.read_csv('/content/creditcard.csv', on_bad_lines='skip')
+df = pd.read_csv(f"{organizations_mlg_ulb_creditcardfraud_path}/creditcard.csv")
 df.head()
 
 df.describe()
