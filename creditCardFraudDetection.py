@@ -1,5 +1,5 @@
 import kagglehub
-organizations_mlg_ulb_creditcardfraud_path = kagglehub.dataset_download('mlg-ulb/creditcardfraud')
+organizations_mlg_ulb_creditcardfraud_path =kagglehub.dataset_download_files('mlg-ulb/creditcardfraud', path='.')
 
 print('Data source import complete.')
 
